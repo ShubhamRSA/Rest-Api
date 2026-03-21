@@ -5,12 +5,14 @@ A full-stack REST API application with Node.js/Express backend and React fronten
 ## 🏗️ Tech Stack
 
 ### Backend
+
 - **Runtime**: Node.js
 - **Framework**: Express.js
 - **Database**: PostgreSQL
 - **Validation**: UUID validation, Foreign key constraints
 
 ### Frontend
+
 - **Framework**: React 18
 - **State Management**: Redux Toolkit
 - **Form Handling**: Formik with Zod validation
@@ -52,6 +54,7 @@ rest-api/
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Node.js (v14+)
 - npm or yarn
 - PostgreSQL
@@ -59,12 +62,14 @@ rest-api/
 ### Backend Setup
 
 1. Navigate to backend directory:
+
 ```bash
 cd backend
 npm install
 ```
 
 2. Create `.env` file (if needed):
+
 ```
 DB_USER=postgres
 DB_PASSWORD=your_password
@@ -75,6 +80,7 @@ PORT=3000
 ```
 
 3. Start the server:
+
 ```bash
 npm start
 ```
@@ -84,12 +90,14 @@ Server will run on `http://localhost:3000`
 ### Frontend Setup
 
 1. Navigate to client directory:
+
 ```bash
 cd client
 npm install
 ```
 
 2. Start development server:
+
 ```bash
 npm run dev
 ```
@@ -99,6 +107,7 @@ Frontend will run on `http://localhost:5173`
 ## 📡 API Endpoints
 
 ### Persons
+
 - `GET /api/v1/person` - Get all persons
 - `GET /api/v1/person/:id` - Get person by ID
 - `POST /api/v1/person` - Create new person
@@ -106,6 +115,7 @@ Frontend will run on `http://localhost:5173`
 - `DELETE /api/v1/person/:id` - Delete person
 
 ### Cars
+
 - `GET /api/v1/car` - Get all cars
 - `GET /api/v1/car/:id` - Get car by ID
 - `POST /api/v1/car` - Create new car
@@ -131,12 +141,14 @@ Frontend will run on `http://localhost:5173`
 ### Available Scripts
 
 **Backend:**
+
 ```bash
 npm start      # Start server
 npm run dev    # Start with nodemon (hot reload)
 ```
 
 **Frontend:**
+
 ```bash
 npm run dev    # Start dev server
 npm run build  # Build for production
