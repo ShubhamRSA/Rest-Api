@@ -13,8 +13,11 @@ const apiClient = axios.create({
 // Request Interceptor
 apiClient.interceptors.request.use(
   (config) => {
-    // Add any request preprocessing here
-    // e.g., add auth token, logging, etc.
+    // Add JWT token to Authorization header
+    const token = localStorage.getItem("authToken");
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
     console.log(`📤 ${config.method?.toUpperCase()} ${config.url}`);
     return config;
   },

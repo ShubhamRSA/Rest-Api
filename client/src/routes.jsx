@@ -1,4 +1,6 @@
 import { Navigate } from "react-router-dom";
+import { ProtectedRoute } from "./components/ProtectedRoute";
+import { LoginPage } from "./pages/LoginPage";
 import { PersonPage } from "./pages/PersonPage";
 import { CarPage } from "./pages/CarPage";
 import { PersonDetailPage } from "./pages/PersonDetailPage";
@@ -10,19 +12,23 @@ export const routes = [
     element: <Navigate to="/persons" replace />,
   },
   {
+    path: "/login",
+    element: <LoginPage />,
+  },
+  {
     path: "/persons",
-    element: <PersonPage />,
+    element: <ProtectedRoute element={<PersonPage />} />,
   },
   {
     path: "/person/:personId",
-    element: <PersonDetailPage />,
+    element: <ProtectedRoute element={<PersonDetailPage />} />,
   },
   {
     path: "/cars",
-    element: <CarPage />,
+    element: <ProtectedRoute element={<CarPage />} />,
   },
   {
     path: "/car/:carId",
-    element: <CarDetailPage />,
+    element: <ProtectedRoute element={<CarDetailPage />} />,
   },
 ];

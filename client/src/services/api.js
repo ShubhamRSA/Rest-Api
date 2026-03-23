@@ -1,8 +1,15 @@
 import RestAPIModel from "./apiModel";
+import apiClient from "./apiClient";
 
 // Initialize API models for each entity
 const personAPI = new RestAPIModel("/person");
 const carAPI = new RestAPIModel("/car");
+const authAPI = new RestAPIModel("/auth");
+
+// Auth APIs
+export const registerUser = (userData) => authAPI.post("/register", userData);
+export const loginUser = (credentials) => authAPI.post("/login", credentials);
+export const getCurrentUser = () => apiClient.get("/auth/me");
 
 // Person APIs
 export const getPersons = () => personAPI.getAll();
@@ -25,4 +32,5 @@ export const getCarsByPerson = (personId) => carAPI.get(`/person/${personId}`);
 export default {
   personAPI,
   carAPI,
+  authAPI,
 };
