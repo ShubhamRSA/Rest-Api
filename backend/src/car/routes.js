@@ -1,4 +1,5 @@
 import express from "express";
+import { authMiddleware } from "../auth/middleware.js";
 import {
   getAllCars,
   getCarById,
@@ -9,6 +10,9 @@ import {
 } from "./controller.js";
 
 const router = express.Router();
+
+// Protect all car routes with authentication
+router.use(authMiddleware);
 
 // GET all cars
 router.get("/", getAllCars);

@@ -1,5 +1,5 @@
-import e from "express";
 import express from "express";
+import { authMiddleware } from "../auth/middleware.js";
 import {
   addPerson,
   deletePerson,
@@ -8,6 +8,9 @@ import {
   updatePerson,
 } from "./controller.js";
 const router = express.Router();
+
+// Protect all person routes with authentication
+router.use(authMiddleware);
 
 router.get("/", getPersons);
 
